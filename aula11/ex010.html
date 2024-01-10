@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN LADRÃO</title>
+    <style>
+        body {
+            font: normal 12pt Arial;
+        }
+        input {
+            font: normal 10pt Arial Black;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>MULTAS - Roubo Legalizado</h1>
+    Velocidade do carro: <input type="number" name="txtvel" id="txtvel"> Km/h.
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="res">
+
+    </div>
+    <script>
+        function calcular() {
+            var txtv = window.document.getElementById("txtvel")
+            var res = window.document.getElementById('res')
+            var vel = Number(txtv.value)
+            res.innerHTML = `<p>A sua velocidade é de <strong>${vel}</strong> Km/h.</P>`
+            if (vel > 60) {
+                res.innerHTML += `Você foi <strong>MULTADO</strong> por excesso de velocidade.`
+            }
+            res.innerHTML += `<p><strong>Dirija sempre com segurança!</strong></p>`    
+        }
+    </script>
+</body>
+</html>
